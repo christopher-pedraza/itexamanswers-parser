@@ -1,55 +1,66 @@
+import requests
 from bs4 import BeautifulSoup
+import json
 
-# Load the HTML file
-with open("html-files/CyberOps Associate (version 1.0) - Course Final Exam Answers.html", "r", encoding="utf-8") as file:
-    content = file.read()
+# Load HTML content from the URL
+url = "https://itexamanswers.net/cyberops-associate-version-1-0-final-exam-answers.html"
+response = requests.get(url)
+soup = BeautifulSoup(response.content, "html.parser")
 
-soup = BeautifulSoup(content, "lxml")
-
-# Initialize list to store questions
+# Data extraction parameters
 questions_data = []
+parsing_questions = False  # Start parsing only after detecting actual question format
 
-# Loop through <p> tags to identify questions
-for question in soup.find_all("p"):
-    strong_tag = question.find("strong")
-    if strong_tag:
-        # Check if the <p><strong> is followed by a <ul>, indicating a question
-        next_sibling = question.find_next_sibling()
-        if next_sibling and next_sibling.name == "ul":
-            question_text = strong_tag.get_text(strip=True)
-            
-            # Extract answers
-            answers = []
-            correct_answer = None
-            for li in next_sibling.find_all("li"):
+# Loop through <p> tags and detect questions accurately
+for element in soup.find_all(["p", "ul", "div"]):
+    # Detect the start of questions section by finding the first <p><strong> that appears as a question
+    if element.name == "p" and element.find("strong") and not parsing_questions:
+        parsing_questions = True  # Start parsing questions after this point
+
+    # Skip elements until the question section starts
+    if not parsing_questions:
+        continue
+
+    # Initialize variables for each question
+    if element.name == "p" and element.find("strong"):
+        # Detect question
+        question_text = element.get_text(strip=True)
+        answers = []
+        correct_answer = None
+        explanation = None
+        image_url = None
+
+        # Check for an image after the question (if any)
+        next_sibling = element.find_next_sibling()
+        if next_sibling and next_sibling.name == "img":
+            image_url = next_sibling["src"]
+
+        # Locate the answer <ul> and parse each <li> as an answer option
+        answer_list = element.find_next("ul")
+        if answer_list:
+            for li in answer_list.find_all("li"):
                 answer_text = li.get_text(strip=True)
-                answers.append(answer_text)
-                # Check for the correct answer based on color styling
-                if li.find("span", style="color: rgb(255, 0, 0);"):
+                # Check for the correct answer by red color style
+                if "color: rgb(255, 0, 0)" in str(li):
                     correct_answer = answer_text
-            
-            # Extract explanation if available
-            explanation_div = question.find_next("div", class_="message_box success")
-            explanation = explanation_div.get_text(strip=True) if explanation_div else None
-            
-            # Extract associated image if available
-            image_tag = question.find_next("img")
-            image_src = image_tag["src"] if image_tag else None
-            
-            # Append the parsed question data
-            questions_data.append({
-                "question": question_text,
-                "answers": answers,
-                "correct_answer": correct_answer,
-                "explanation": explanation,
-                "image": image_src
-            })
+                answers.append(answer_text)
 
-# Example output
-for q in questions_data:
-    print(f"Question: {q['question']}")
-    print(f"Answers: {q['answers']}")
-    print(f"Correct Answer: {q['correct_answer']}")
-    print(f"Explanation: {q['explanation']}")
-    print(f"Image: {q['image']}")
-    print("-----")
+        # Extract explanation in the following <div> with the success class
+        explanation_div = element.find_next("div", class_="message_box success")
+        if explanation_div:
+            explanation = explanation_div.get_text(strip=True)
+
+        # Append question data to the list
+        questions_data.append({
+            "question": question_text,
+            "answers": answers,
+            "correct_answer": correct_answer,
+            "explanation": explanation,
+            "image": image_url
+        })
+
+# Save parsed data to a JSON file
+with open("parsed_questions.json", "w", encoding="utf-8") as file:
+    json.dump(questions_data, file, indent=4, ensure_ascii=False)
+
+print("Data has been parsed and saved to 'parsed_questions.json'")
