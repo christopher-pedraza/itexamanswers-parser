@@ -66,12 +66,11 @@ for question in soup.find_all("p"):
             # Collect images regardless of tag
             if sibling.name == "img":
                 images.append(sibling["src"])
-                # print(f"Image found for question '{question_text}': {sibling['src']}")  # Debug print
+                print(f"Image found for question '{question_text}': {sibling['src']}")  # Debug print
 
-            # Extract explanation if available
-            explanation_div = question.find_next("div", class_="message_box success")
-            if explanation_div:
-                explanation = explanation_div.get_text(strip=True)
+            # Collect explanation if available
+            if sibling.name == "div" and "message_box success" in sibling.get("class", []):
+                explanation = sibling.get_text(strip=True)
 
         # Append the parsed question data, ensuring all fields are present
         questions_data.append({
