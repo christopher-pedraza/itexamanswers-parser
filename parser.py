@@ -5,62 +5,78 @@ import json
 # Load HTML content from the URL
 url = "https://itexamanswers.net/cyberops-associate-version-1-0-final-exam-answers.html"
 response = requests.get(url)
-soup = BeautifulSoup(response.content, "html.parser")
+response.raise_for_status()  # Check for HTTP errors
 
-# Data extraction parameters
+# Parse the HTML content with BeautifulSoup
+soup = BeautifulSoup(response.text, "lxml")
+
+# Initialize list to store questions
 questions_data = []
-parsing_questions = False  # Start parsing only after detecting actual question format
 
-# Loop through <p> tags and detect questions accurately
-for element in soup.find_all(["p", "ul", "div"]):
-    # Detect the start of questions section by finding the first <p><strong> that appears as a question
-    if element.name == "p" and element.find("strong") and not parsing_questions:
-        parsing_questions = True  # Start parsing questions after this point
+# Set flag to indicate when to stop parsing
+stop_parsing = False
 
-    # Skip elements until the question section starts
-    if not parsing_questions:
+# Loop through <p> tags to identify questions
+for question in soup.find_all("p"):
+    # Check if we're entering an unrelated section
+    if question.find_previous("nav", {"class": "navigation post-navigation"}) or \
+       question.find_previous("div", {"id": "comments", "class": "comments-area"}) or \
+       question.find_previous("div", {"class": "wpdiscuz_top_clearing"}):
+        stop_parsing = True
+    
+    # Skip parsing if we've reached the stop point
+    if stop_parsing:
         continue
-
-    # Initialize variables for each question
-    if element.name == "p" and element.find("strong"):
-        # Detect question
-        question_text = element.get_text(strip=True)
-        answers = []
-        correct_answer = None
-        explanation = None
-        image_url = None
-
-        # Check for an image after the question (if any)
-        next_sibling = element.find_next_sibling()
-        if next_sibling and next_sibling.name == "img":
-            image_url = next_sibling["src"]
-
-        # Locate the answer <ul> and parse each <li> as an answer option
-        answer_list = element.find_next("ul")
-        if answer_list:
-            for li in answer_list.find_all("li"):
+    
+    strong_tag = question.find("strong")
+    if strong_tag and "Explanation" not in strong_tag.text:
+        next_sibling = question.find_next_sibling()
+        if next_sibling and next_sibling.name == "ul":
+            question_text = strong_tag.get_text(strip=True)
+            
+            # Extract answers
+            answers = []
+        
+            for li in next_sibling.find_all("li"):
                 answer_text = li.get_text(strip=True)
-                # Check for the correct answer by red color style
-                if "color: rgb(255, 0, 0)" in str(li):
-                    correct_answer = answer_text
-                answers.append(answer_text)
+                # Check for the span tag inside any child of li (even inside a <b>)
+                span_tag = li.find("span", style=True)
 
-        # Extract explanation in the following <div> with the success class
-        explanation_div = element.find_next("div", class_="message_box success")
-        if explanation_div:
-            explanation = explanation_div.get_text(strip=True)
+                # Check if the color is correct, handling both color formats
+                is_correct = False
 
-        # Append question data to the list
-        questions_data.append({
-            "question": question_text,
-            "answers": answers,
-            "correct_answer": correct_answer,
-            "explanation": explanation,
-            "image": image_url
-        })
+                if span_tag:
+                    # Get the style attribute
+                    style = span_tag['style'].lower()
 
-# Save parsed data to a JSON file
-with open("parsed_questions.json", "w", encoding="utf-8") as file:
-    json.dump(questions_data, file, indent=4, ensure_ascii=False)
+                    # Check for both possible color formats
+                    if "color: rgb(255, 0, 0)" in style or "color: #ff0000" in style:
+                        is_correct = True
+                
+                answers.append({
+                    "answer": answer_text,
+                    "is_correct": is_correct
+                })
+              
+            
+            # Extract explanation if available
+            explanation_div = question.find_next("div", class_="message_box success")
+            explanation = explanation_div.get_text(strip=True) if explanation_div else None
+            
+            # Extract associated image if available
+            image_tag = question.find_next("img")
+            image_src = image_tag["src"] if image_tag else None
+            
+            # Append the parsed question data
+            questions_data.append({
+                "question": question_text,
+                "answers": answers,
+                "explanation": explanation,
+                "image": image_src
+            })
 
-print("Data has been parsed and saved to 'parsed_questions.json'")
+# Save to JSON file
+with open("questions_data.json", "w", encoding="utf-8") as json_file:
+    json.dump(questions_data, json_file, indent=4, ensure_ascii=False)
+
+print("Data saved to questions_data.json")
