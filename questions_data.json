@@ -1,6 +1,6 @@
 [
     {
-        "question": "How to find:",
+        "question": "How to find:Press“Ctrl + F”in the browser and fill in whatever wording is in the question to find that question/answer. If the question is not here, find it inQuestions Bank.",
         "answers": null,
         "explanation": null,
         "images": null
@@ -790,12 +790,6 @@
         "images": null
     },
     {
-        "question": "ping 127.0.0.1",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "37. What characterizes a threat actor?",
         "answers": [
             {
@@ -1443,25 +1437,25 @@
         "images": null
     },
     {
-        "question": "Risk avoidance",
+        "question": "Risk avoidance– Stop performing the activities that create risk.",
         "answers": null,
         "explanation": null,
         "images": null
     },
     {
-        "question": "Risk reduction",
+        "question": "Risk reduction– Decrease the risk by taking measures to reduce vulnerability.",
         "answers": null,
         "explanation": null,
         "images": null
     },
     {
-        "question": "Risk sharing",
+        "question": "Risk sharing– Shift some of the risk to other parties.",
         "answers": null,
         "explanation": null,
         "images": null
     },
     {
-        "question": "Risk retention",
+        "question": "Risk retention– Accept the risk and its consequences.",
         "answers": null,
         "explanation": null,
         "images": null
@@ -3870,7 +3864,7 @@
         "images": null
     },
     {
-        "question": "Explain:",
+        "question": "Explain:The destination multicast IPv4 address is a group address, which is a single IP multicast address within the Class D range.",
         "answers": null,
         "explanation": null,
         "images": null
