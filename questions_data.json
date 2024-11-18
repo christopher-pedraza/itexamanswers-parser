@@ -813,7 +813,7 @@
         "images": null
     },
     {
-        "question": "38. A computer is presenting a user with a screen requesting payment before the user data is allowed to be accessed by the same user. What type of malware is this?",
+        "question": "38. A computer is presenting a user with a screen requesting payment before the user data is allowed to be accessed by the same user. What type of malware is this?A computer is presenting a user with a screen requesting payment before the user data is allowed to be accessed  by the same user. What type of malware is this?",
         "answers": [
             {
                 "answer": "a type of logic bomb",
