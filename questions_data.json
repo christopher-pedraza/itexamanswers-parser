@@ -2,7 +2,7 @@
     {
         "question": "How to find:",
         "answers": null,
-        "explanation": "Explanation:The type of end user interaction required to launch a virus is typically opening an application, opening a web page, or powering on the computer. Once activated, a virus may infect other files located on the computer or other computers on the same network.",
+        "explanation": null,
         "images": null
     },
     {
@@ -103,7 +103,24 @@
     },
     {
         "question": "5. Refer to the exhibit. A cybersecurity analyst is viewing packets forwarded by switch S2. What addresses will identify frames containing data sent from PCA to PCB?",
-        "answers": null,
+        "answers": [
+            {
+                "answer": "Src IP: 192.168.2.1Src MAC: 00-60-0F-B1-33-33Dst IP: 192.168.2.101Dst MAC: 08-CB-8A-5C-BB-BB",
+                "is_correct": false
+            },
+            {
+                "answer": "Src IP: 192.168.1.212Src MAC: 01-90-C0-E4-AA-AADst IP: 192.168.2.101Dst MAC: 08-CB-8A-5C-BB-BB",
+                "is_correct": false
+            },
+            {
+                "answer": "Src IP: 192.168.1.212Src MAC: 00-60-0F-B1-33-33Dst IP: 192.168.2.101Dst MAC: 08-CB-8A-5C-BB-BB",
+                "is_correct": true
+            },
+            {
+                "answer": "Src IP: 192.168.1.212Src MAC: 00-60-0F-B1-33-33Dst IP: 192.168.2.101Dst MAC: 00-D0-D3-BE-00-00",
+                "is_correct": false
+            }
+        ],
         "explanation": "Explanation:When a message sent from PCA to PCB reaches router R2, some frame header fields will be rewritten by R2 before forwarding to switch S2. The frames will contain the source MAC address of router R2 and the destination MAC address of PCB. The frames will retain the original IPv4 addressing applied by PCA which is the IPv4 address of PCA as the source address and the IPv4 address of PCB as the destination.",
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/5Q.jpg"
@@ -138,14 +155,12 @@
             }
         ],
         "explanation": "Explanation:A Security Onion Architecture:Detection tools in Security Onion Architecture include: CapME, Snort, Zeek, OSSEC, Wazuh, Suricata.",
-        "images": [
-            "https://itexamanswers.net/wp-content/uploads/2020/11/2022-04-22_145442.jpg"
-        ]
+        "images": null
     },
     {
         "question": "7. Match the Security Onion tool with the description.",
         "answers": null,
-        "explanation": "Explanation:A risk analysis includes assessment of the likelihood of attacks, identifies types of likely threat actors, and evaluates the impact of successful exploits on the organization.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/7Q.jpg"
         ]
@@ -230,7 +245,7 @@
     {
         "question": "12. Match the monitoring tool to the definition.",
         "answers": null,
-        "explanation": "Explanation:Within a year, there are 365 days x 24 hours a day x 60 minutes per hour = 525,600 minutes. With the goal of uptime 99.999% of time, the downtime needs to be controlled under 525,600 x (1-0.99999) = 5.256 minutes a year.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q12CyberOps-Associate.jpg"
         ]
@@ -278,7 +293,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:IMAP and POP are protocols that are used to retrieve email messages. The advantage of using IMAP instead of POP is that when the user connects to an IMAP-capable server, copies of the messages are downloaded to the client application. IMAP then stores the email messages on the server until the user manually deletes those messages.",
+        "explanation": null,
         "images": null
     },
     {
@@ -324,13 +339,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:When a node encapsulates a data packet into a frame, it needs the destination MAC address. First it determines if the destination device is on the local network or on a remote network. Then it checks the ARP table (not the MAC table) to see if a pair of IP address and MAC address exists for either the destination IP address (if the destination host is on the local network) or the default gateway IP address (if the destination host is on a remote network). If the match does not exist, it generates an ARP broadcast to seek the IP address to MAC address resolution. Because the destination MAC address is unknown, the ARP request is broadcast with the MAC address FFFF.FFFF.FFFF. Either the destination device or the default gateway will respond with its MAC address, which enables the sending node to assemble the frame. If no device responds to the ARP request, then the originating node will discard the packet because a frame cannot be created.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "17. Match the attack tools with the description. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:When a node encapsulates a data packet into a frame, it needs the destination MAC address. First it determines if the destination device is on the local network or on a remote network. Then it checks the ARP table (not the MAC table) to see if a pair of IP address and MAC address exists for either the destination IP address (if the destination host is on the local network) or the default gateway IP address (if the destination host is on a remote network). If the match does not exist, it generates an ARP broadcast to seek the IP address to MAC address resolution. Because the destination MAC address is unknown, the ARP request is broadcast with the MAC address FFFF.FFFF.FFFF. Either the destination device or the default gateway will respond with its MAC address, which enables the sending node to assemble the frame. If no device responds to the ARP request, then the originating node will discard the packet because a frame cannot be created.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q17CyberOps-Associate.jpg"
         ]
@@ -382,7 +397,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Tor is a software platform and network of peer-to-peer (P2P) hosts that function as routers. Users access the Tor network by using a special browserthat allows them to browse anonymously.",
+        "explanation": null,
         "images": null
     },
     {
@@ -432,7 +447,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Wireshark captures the entire contents of a packet. NetFlow does not. Instead, NetFlow collects metadata, or data about the flow.",
+        "explanation": null,
         "images": null
     },
     {
@@ -524,7 +539,7 @@
                 "is_correct": true
             }
         ],
-        "explanation": "Explanation:RADIUS authentication supports the following features:RADIUS authentication and authorization as one processEncrypts only the passwordUtilizes UDPSupports remote-access technologies, 802.1X, and Session Initiation Protocol (SIP)",
+        "explanation": null,
         "images": null
     },
     {
@@ -682,13 +697,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:A criminal can insert a malicious SQL statement in an entry field on a website where the system does not filter the user input correctly.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "32. Match the security policy with the description. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:A criminal can insert a malicious SQL statement in an entry field on a website where the system does not filter the user input correctly.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/2020-10-19_200447.jpg"
         ]
@@ -696,7 +711,7 @@
     {
         "question": "33. Match the attack to the definition. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:A criminal can insert a malicious SQL statement in an entry field on a website where the system does not filter the user input correctly.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q33CyberOps-Associate.jpg"
         ]
@@ -748,7 +763,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Theping 127.0.0.1command is used to verify that the TCP/IP stack is functional. It verifies the proper operation of the protocol stack from the network layer to physical layer, without sending a signal on the media. That is, this test does not go beyond the PC itself. For example, it does not detect whether a cable is connected to the PC or not.",
+        "explanation": null,
         "images": null
     },
     {
@@ -777,7 +792,7 @@
     {
         "question": "ping 127.0.0.1",
         "answers": null,
-        "explanation": "Explanation:Ransomware commonly encrypts data on a computer and makes the data unavailable until the computer user pays a specific sum of money",
+        "explanation": null,
         "images": null
     },
     {
@@ -800,7 +815,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Ransomware commonly encrypts data on a computer and makes the data unavailable until the computer user pays a specific sum of money",
+        "explanation": null,
         "images": null
     },
     {
@@ -869,7 +884,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:To reduce the huge amount of data collected so that cybersecurity analysts can focus on critical threats, some less important or unusable data could be eliminated from the datasets. For example, encrypted data, such as IPsec and SSL traffic, could be eliminated because it is unreadable in a reasonable time frame.",
+        "explanation": null,
         "images": null
     },
     {
@@ -919,13 +934,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Common attack vectors include media, attrition, impersonation, and loss or theft. Attrition attacks are any attacks that use brute force. Media attacks are those initiated from storage devices. Impersonation attacks occur when something or someone is replaced for the purpose of the attack, and loss or theft attacks are initiated by equipment inside the organization.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "43. Match the security incident stakeholder with the role.",
         "answers": null,
-        "explanation": "Explanation:Common attack vectors include media, attrition, impersonation, and loss or theft. Attrition attacks are any attacks that use brute force. Media attacks are those initiated from storage devices. Impersonation attacks occur when something or someone is replaced for the purpose of the attack, and loss or theft attacks are initiated by equipment inside the organization.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q43CyberOps-Associate.png"
         ]
@@ -956,7 +971,7 @@
     {
         "question": "45. Match the security organization with its security functions. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:CybOX is an open standards set of standardized schemata for specifying, capturing, characterizing, and communicating events and properties of network operations that support many cybersecurity functions.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q45CyberOps-Associate.png"
         ]
@@ -987,7 +1002,7 @@
     {
         "question": "47. After host A receives a web page from server B, host A terminates the connection with server B. Match each step to its correct option in the normal termination process for a TCP connection. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:ICMP can be used as a conduit for DoS attacks. It can be used to collect information about a network such as the identification of hosts and network structure, and by determining the operating systems being used on the network.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q47CyberOps-Associate.png"
         ]
@@ -1072,34 +1087,6 @@
             {
                 "answer": "net stop",
                 "is_correct": false
-            },
-            {
-                "answer": "net accounts– sets password and logon requirements for users",
-                "is_correct": false
-            },
-            {
-                "answer": "net session– lists or disconnects sessions between a computer and other computers on the network",
-                "is_correct": false
-            },
-            {
-                "answer": "net share– creates, removes, or manages shared resources",
-                "is_correct": false
-            },
-            {
-                "answer": "net start– starts a network service or lists running network services",
-                "is_correct": false
-            },
-            {
-                "answer": "net stop– stops a network service",
-                "is_correct": false
-            },
-            {
-                "answer": "net use– connects, disconnects, and displays information about shared network resources",
-                "is_correct": false
-            },
-            {
-                "answer": "net view– shows a list of computers and network devices on the network",
-                "is_correct": false
             }
         ],
         "explanation": "Explanation:Thenetcommand is a very important command. Some commonnetcommands include these:net accounts– sets password and logon requirements for usersnet session– lists or disconnects sessions between a computer and other computers on the networknet share– creates, removes, or manages shared resourcesnet start– starts a network service or lists running network servicesnet stop– stops a network servicenet use– connects, disconnects, and displays information about shared network resourcesnet view– shows a list of computers and network devices on the network",
@@ -1108,7 +1095,7 @@
     {
         "question": "51. Match the Windows 10 Registry key with its description. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:When received at the physical layer of a host, the bits are formatted into a frame at the data link layer. A packet is the PDU at the network layer. A segment is the PDU at the transport layer. A file is a data structure that may be used at the application layer.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q51CyberOps-Associate.png"
         ]
@@ -1214,7 +1201,7 @@
     {
         "question": "56. Match the network service with the description.",
         "answers": null,
-        "explanation": "Explanation:DCHP starvation attacks are launched by an attacker with the intent to create a DoS for DHCP clients. To accomplish this goal, the attacker uses a tool that sends many DHCPDISCOVER messages in order to lease the entire pool of available IP addresses, thus denying them to legitimate hosts.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2022/07/2024-09-26_104808.jpg"
         ]
@@ -1222,7 +1209,7 @@
     {
         "question": "57. A client application needs to terminate a TCP communication session with a server. Place the termination process steps in the order that they will occur. (Nat all options are used.)",
         "answers": null,
-        "explanation": "Explanation:DCHP starvation attacks are launched by an attacker with the intent to create a DoS for DHCP clients. To accomplish this goal, the attacker uses a tool that sends many DHCPDISCOVER messages in order to lease the entire pool of available IP addresses, thus denying them to legitimate hosts.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q57CyberOps-Associate.png"
         ]
@@ -1230,7 +1217,7 @@
     {
         "question": "58. Match the attack surface with attack exploits.",
         "answers": null,
-        "explanation": "Explanation:DCHP starvation attacks are launched by an attacker with the intent to create a DoS for DHCP clients. To accomplish this goal, the attacker uses a tool that sends many DHCPDISCOVER messages in order to lease the entire pool of available IP addresses, thus denying them to legitimate hosts.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/Q58CyberOps-Associate.png"
         ]
@@ -1238,7 +1225,7 @@
     {
         "question": "59. Match the Linux host-based firewall application with its description.",
         "answers": null,
-        "explanation": "Explanation:DCHP starvation attacks are launched by an attacker with the intent to create a DoS for DHCP clients. To accomplish this goal, the attacker uses a tool that sends many DHCPDISCOVER messages in order to lease the entire pool of available IP addresses, thus denying them to legitimate hosts.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/59_2022-06-28_112112.jpg"
         ]
@@ -1325,7 +1312,7 @@
     {
         "question": "63. Match the destination network routing table entry type with a defintion.",
         "answers": null,
-        "explanation": "Explanation:In order for wireless devices to communicate on a wireless network, management frames are used to complete a three-stage process:Discover the APAuthenticate with the APAssociate with the AP",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/2020-10-19_194941.jpg"
         ]
@@ -1383,12 +1370,29 @@
     {
         "question": "66. An administrator wants to create four subnetworks from the network address 192.168.1.0/24. What is the network address and subnet mask of the second useable subnet?",
         "answers": null,
-        "explanation": "Explanation:The number of bits that are borrowed would be two, thus giving a total of 4 useable subnets:192.168.1.0192.168.1.64192.168.1.128192.168.1.192Because 2 bits are borrowed, the new subnet mask would be /26 or 255.255.255.192",
+        "explanation": null,
         "images": null
     },
     {
         "question": "subnetwork 192.168.1.64subnet mask 255.255.255.192",
-        "answers": null,
+        "answers": [
+            {
+                "answer": "subnetwork 192.168.1.64subnet mask 255.255.255.240",
+                "is_correct": false
+            },
+            {
+                "answer": "subnetwork 192.168.1.32subnet mask 255.255.255.240",
+                "is_correct": false
+            },
+            {
+                "answer": "subnetwork 192.168.1.128subnet mask 255.255.255.192",
+                "is_correct": false
+            },
+            {
+                "answer": "subnetwork 192.168.1.8subnet mask 255.255.255.224",
+                "is_correct": false
+            }
+        ],
         "explanation": "Explanation:The number of bits that are borrowed would be two, thus giving a total of 4 useable subnets:192.168.1.0192.168.1.64192.168.1.128192.168.1.192Because 2 bits are borrowed, the new subnet mask would be /26 or 255.255.255.192",
         "images": null
     },
@@ -1441,25 +1445,25 @@
     {
         "question": "Risk avoidance",
         "answers": null,
-        "explanation": "Explanation:An Information Security Management System (ISMS) consists of a management framework through which an organization identifies, analyzes, and addresses information security risks. ISMSs are not based in servers or security devices. Instead, an ISMS consists of a set of practices that are systematically applied by an organization to ensure continuous improvement in information security. ISMSs provide conceptual models that guide organizations in planning, implementing, governing, and evaluating information security programs.ISMSs are a natural extension of the use of popular business models, such as Total Quality Management (TQM) and Control Objectives for Information and Related Technologies (COBIT), into the realm of cybersecurity.An ISMS is a systematic, multi-layered approach to cybersecurity. The approach includes people, processes, technologies, and the cultures in which they interact in a process of risk management.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "Risk reduction",
         "answers": null,
-        "explanation": "Explanation:An Information Security Management System (ISMS) consists of a management framework through which an organization identifies, analyzes, and addresses information security risks. ISMSs are not based in servers or security devices. Instead, an ISMS consists of a set of practices that are systematically applied by an organization to ensure continuous improvement in information security. ISMSs provide conceptual models that guide organizations in planning, implementing, governing, and evaluating information security programs.ISMSs are a natural extension of the use of popular business models, such as Total Quality Management (TQM) and Control Objectives for Information and Related Technologies (COBIT), into the realm of cybersecurity.An ISMS is a systematic, multi-layered approach to cybersecurity. The approach includes people, processes, technologies, and the cultures in which they interact in a process of risk management.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "Risk sharing",
         "answers": null,
-        "explanation": "Explanation:An Information Security Management System (ISMS) consists of a management framework through which an organization identifies, analyzes, and addresses information security risks. ISMSs are not based in servers or security devices. Instead, an ISMS consists of a set of practices that are systematically applied by an organization to ensure continuous improvement in information security. ISMSs provide conceptual models that guide organizations in planning, implementing, governing, and evaluating information security programs.ISMSs are a natural extension of the use of popular business models, such as Total Quality Management (TQM) and Control Objectives for Information and Related Technologies (COBIT), into the realm of cybersecurity.An ISMS is a systematic, multi-layered approach to cybersecurity. The approach includes people, processes, technologies, and the cultures in which they interact in a process of risk management.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "Risk retention",
         "answers": null,
-        "explanation": "Explanation:An Information Security Management System (ISMS) consists of a management framework through which an organization identifies, analyzes, and addresses information security risks. ISMSs are not based in servers or security devices. Instead, an ISMS consists of a set of practices that are systematically applied by an organization to ensure continuous improvement in information security. ISMSs provide conceptual models that guide organizations in planning, implementing, governing, and evaluating information security programs.ISMSs are a natural extension of the use of popular business models, such as Total Quality Management (TQM) and Control Objectives for Information and Related Technologies (COBIT), into the realm of cybersecurity.An ISMS is a systematic, multi-layered approach to cybersecurity. The approach includes people, processes, technologies, and the cultures in which they interact in a process of risk management.",
+        "explanation": null,
         "images": null
     },
     {
@@ -1567,7 +1571,7 @@
                 "is_correct": true
             }
         ],
-        "explanation": "Explanation:Only disable Windows Firewall if other firewall software is installed. Use the Windows Firewall (Windows 7 or 8) or the Windows Defender Firewall (Windows 10) Control Panel to enable or disable the Windows Firewall.",
+        "explanation": null,
         "images": null
     },
     {
@@ -1613,13 +1617,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:SPAN is a Cisco technology that allows all of the traffic from one port to be redirected to another port.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "75. Match the network monitoring data type with the description.",
         "answers": null,
-        "explanation": "Explanation:SPAN is a Cisco technology that allows all of the traffic from one port to be redirected to another port.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/2020-10-19_201708.jpg"
         ]
@@ -1740,7 +1744,7 @@
                 "is_correct": true
             }
         ],
-        "explanation": "Explanation:Botnets can be used to perform DDoS attacks, obtain data, or transmit malware to other devices on the network.",
+        "explanation": null,
         "images": null
     },
     {
@@ -1985,7 +1989,7 @@
     {
         "question": "90. Place the seven steps defined in the Cyber Kill Chain in the correct order.",
         "answers": null,
-        "explanation": "Explanation:The value in the control bits field of theTCP header indicates the progress and status of the connection.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/2020-10-19_202341.jpg"
         ]
@@ -2083,13 +2087,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:With SLAAC, the default gateway for IPv6 clients will be the link-local address of the router interface that is attached to the client LAN. The IPv6 addressing is dynamically assigned via the ICMPv6 protocol. SLAAC is a stateless method of acquiring an IPv6 address, a method that requires no servers. When a client is configured to obtain its addressing information automatically via SLAAC, the client sends a router solicitation message to the IPv6 all-routers multicast address FF02::2. The router advertisement messages are sent by routers to provide addressing information to clients.",
+        "explanation": null,
         "images": null
     },
     {
         "question": "95. Match the category of attacks with the description. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:With SLAAC, the default gateway for IPv6 clients will be the link-local address of the router interface that is attached to the client LAN. The IPv6 addressing is dynamically assigned via the ICMPv6 protocol. SLAAC is a stateless method of acquiring an IPv6 address, a method that requires no servers. When a client is configured to obtain its addressing information automatically via SLAAC, the client sends a router solicitation message to the IPv6 all-routers multicast address FF02::2. The router advertisement messages are sent by routers to provide addressing information to clients.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/2020-10-19_202739.jpg"
         ]
@@ -2214,7 +2218,7 @@
                 "is_correct": true
             }
         ],
-        "explanation": "Explanation:A smurf attack uses amplification and reflection techniques to overwhelm a targeted host. The threat actor forwards ICMP echo request messages that contain the source IP address of the victim to a large number of hosts. These hosts all reply to the spoofed IP address of the victim with the intent of overwhelming it.",
+        "explanation": null,
         "images": null
     },
     {
@@ -2293,7 +2297,7 @@
     {
         "question": "104. Match the field in the Event table of Sguil to the description.",
         "answers": null,
-        "explanation": "Explanation:Configuring the cell phone to act as a wireless access point means that the cell phone is now a rogue access point. The employee unknowingly breached the security of the company network by allowing a user to access the network without connecting through the company access point. Cracking is the process of obtaining passwords from data stored or transmitted on a network. Denial of service attacks refer to sending large amounts of data to a networked device, such as a server, to prevent legitimate access to the server. Spoofing refers to access gained to a network or data by an attacker appearing to be a legitimate network device or user.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2019/05/Q35Chapter12Answer.jpg"
         ]
@@ -2341,7 +2345,7 @@
                 "is_correct": true
             }
         ],
-        "explanation": "Explanation:Symmetric encryption algorithms use the same key (also called shared secret) to encrypt and decrypt the data. In contrast, asymmetric encryption algorithms use a pair of keys, one for encryption and another for decryption.",
+        "explanation": null,
         "images": null
     },
     {
@@ -2445,7 +2449,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Threat actors may attempt to attack the NTP infrastructure in order to corrupt time information used to correlate logged network events. This can serve to obfuscate traces of ongoing exploits. In addition, threat actors have been known to use NTP systems to direct DDoS attacks through vulnerabilities in client or server software. While these attacks do not necessarily result in corrupted security monitoring data, they can disrupt network availability.",
+        "explanation": null,
         "images": null
     },
     {
@@ -2505,7 +2509,7 @@
     {
         "question": "113. Match the SIEM function to the description.",
         "answers": null,
-        "explanation": "Explanation:Three types of attacks used on DNS open resolvers are as follows:DNS cache poisoning – attacker sends spoofed falsified information to redirect users from legitimate sites to malicious sitesDNS amplification and reflection attacks – attacker sends an increased volume of attacks to mask the true source of the attackDNS resource utilization attacks – a denial of service (DoS) attack that consumes server resources",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/Match-the-SIEM-function-to-the-description..jpg"
         ]
@@ -2565,7 +2569,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:Some applications may use both TCP and UDP. DNS uses UDP when clients send requests to a DNS server, and TCP when two DNS serves directly communicate.",
+        "explanation": null,
         "images": null
     },
     {
@@ -2747,22 +2751,6 @@
             {
                 "answer": "setup logs",
                 "is_correct": false
-            },
-            {
-                "answer": "Application logs –events logged by various applications",
-                "is_correct": false
-            },
-            {
-                "answer": "System logs –events about the operation of drivers, processes, and hardware",
-                "is_correct": false
-            },
-            {
-                "answer": "Setup logs –information about the installation of software, including Windows updates",
-                "is_correct": false
-            },
-            {
-                "answer": "Security logs –events related to security, such as logon attempts and operations related to file or object management and access",
-                "is_correct": false
             }
         ],
         "explanation": "By default Windows keeps four types of host logs:Application logs –events logged by various applicationsSystem logs –events about the operation of drivers, processes, and hardwareSetup logs –information about the installation of software, including Windows updatesSecurity logs –events related to security, such as logon attempts and operations related to file or object management and access",
@@ -2825,7 +2813,7 @@
     {
         "question": "127. Match the common network technology or protocol with the description. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:Security Onion is an open source suite of Network Security Monitoring (NSM) tools for evaluating cybersecurity alerts. For cybersecurity analysts the Security Onion provides full packet capture, network-based and host-based intrusion detection systems, and alert analysis tools.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/Match-the-common-network-technology-or-protocol-with-the-description.-Not-all-options-are-used-1603835322.0881.jpg"
         ]
@@ -3077,30 +3065,6 @@
             {
                 "answer": "verify",
                 "is_correct": false
-            },
-            {
-                "answer": "Discover – inventory all assets across the network and identify host details, including operating systems and open services, to identify vulnerabilities",
-                "is_correct": false
-            },
-            {
-                "answer": "Prioritize assets – categorize assets into groups or business units, and assign a business value to asset groups based on their criticality to business operations",
-                "is_correct": false
-            },
-            {
-                "answer": "Assess – determine a baseline risk profile to eliminate risks based on asset criticality, vulnerability threats, and asset classification",
-                "is_correct": false
-            },
-            {
-                "answer": "Report – measure the level of business risk associated with assets according to security policies. Document a security plan, monitor suspicious activity, and describe known vulnerabilities.",
-                "is_correct": false
-            },
-            {
-                "answer": "Remediate – prioritize according to business risk and fix vulnerabilities in order of risk",
-                "is_correct": false
-            },
-            {
-                "answer": "Verify – verify that threats have been eliminated through follow-up audits",
-                "is_correct": false
             }
         ],
         "explanation": "Explanation:The steps in the Vulnerability Management Life Cycle include these:Discover – inventory all assets across the network and identify host details, including operating systems and open services, to identify vulnerabilitiesPrioritize assets – categorize assets into groups or business units, and assign a business value to asset groups based on their criticality to business operationsAssess – determine a baseline risk profile to eliminate risks based on asset criticality, vulnerability threats, and asset classificationReport – measure the level of business risk associated with assets according to security policies. Document a security plan, monitor suspicious activity, and describe known vulnerabilities.Remediate – prioritize according to business risk and fix vulnerabilities in order of riskVerify – verify that threats have been eliminated through follow-up audits",
@@ -3251,18 +3215,6 @@
             {
                 "answer": "Expire false positives.",
                 "is_correct": true
-            },
-            {
-                "answer": "Alerts that have been found to be false positives can be expired.",
-                "is_correct": false
-            },
-            {
-                "answer": "An alert can be escalated if the cybersecurity analyst is uncertain how to handle it.",
-                "is_correct": false
-            },
-            {
-                "answer": "Events that have been identified as true positives can be categorized.",
-                "is_correct": false
             }
         ],
         "explanation": "Explanation:Sguil is a tool for addressing alerts. Three tasks can be completed in Sguil to manage alerts:Alerts that have been found to be false positives can be expired.An alert can be escalated if the cybersecurity analyst is uncertain how to handle it.Events that have been identified as true positives can be categorized.",
@@ -3271,7 +3223,7 @@
     {
         "question": "144. Match the SOC metric with the description. (Not all options apply.)",
         "answers": null,
-        "explanation": "Explanation:NetFlow efficiently provides an important set of services for IP applications including network traffic accounting, usage-based network billing, network planning, security, denial of service monitoring capabilities, and network monitoring.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/11/CyberOps-Associate-1.0-Final-exam_15.jpg"
         ]
@@ -3502,18 +3454,6 @@
             {
                 "answer": "10.234.2.1",
                 "is_correct": true
-            },
-            {
-                "answer": "10.0.0.0 – 10.255.255.255",
-                "is_correct": false
-            },
-            {
-                "answer": "172.16.0.0 – 172.31.255.255",
-                "is_correct": false
-            },
-            {
-                "answer": "192.168.0.0 – 192.168.255.255",
-                "is_correct": false
             }
         ],
         "explanation": "Explanation:The designated private IP addresses are within the three IP address ranges:10.0.0.0 – 10.255.255.255172.16.0.0 – 172.31.255.255192.168.0.0 – 192.168.255.255",
@@ -3562,13 +3502,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:A cryptographic hash function should have the following properties:The input can be any length.The output has a fixed length.The hash value is relatively easy to compute for any given input.The hash is one way and not reversible.The hash is collision free, meaning that two different input values will result in different hash values",
+        "explanation": null,
         "images": null
     },
     {
         "question": "156. Match the correct sequence of steps typically taken by a threat actor carrying out a domain shadowing attack.",
         "answers": null,
-        "explanation": "Explanation:A cryptographic hash function should have the following properties:The input can be any length.The output has a fixed length.The hash value is relatively easy to compute for any given input.The hash is one way and not reversible.The hash is collision free, meaning that two different input values will result in different hash values",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2022/07/2024-09-26_111311.jpg"
         ]
@@ -3674,14 +3614,6 @@
             {
                 "answer": "analysis of applications that conform to application/networking standards",
                 "is_correct": false
-            },
-            {
-                "answer": "Deterministic Analysis: For an exploit to be successful, all prior steps in the exploit must also be successful. The cybersecurity analyst knows the steps for a successful exploit.",
-                "is_correct": false
-            },
-            {
-                "answer": "Probabilistic Analysis: Statistical techniques are used to determine the probability that a successful exploit will occur based on the likelihood that each step in the exploit will succeed.",
-                "is_correct": false
             }
         ],
         "explanation": "Explanation:Statistical techniques can be used to evaluate the risk that exploits will be successful in a given network. This type of analysis can help decision makers to better evaluate the cost of mitigating a threat and the damage that an exploit could cause. Two general approaches used to do this are as follows:Deterministic Analysis: For an exploit to be successful, all prior steps in the exploit must also be successful. The cybersecurity analyst knows the steps for a successful exploit.Probabilistic Analysis: Statistical techniques are used to determine the probability that a successful exploit will occur based on the likelihood that each step in the exploit will succeed.",
@@ -3730,7 +3662,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:POP, POP3, and IMAP are protocols that are used to retrieve email from servers. SMTP is the default protocol that is used to send email. DNS may be used by the sender email server to find the address of the destination email server. HTTP is a protocol for send and receiving web pages.",
+        "explanation": null,
         "images": null
     },
     {
@@ -3784,7 +3716,7 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:A piece of malware, after accessing a host, may exploit the DNS service by communicating with command-and-control (CnC) servers and then exfiltrate data in traffic disguised as normal DNS lookup queries. Various types of encoding, such as base64, 8-bit binary, and hex can be used to camouflage the data and evade basic data loss prevention (DLP) measures.",
+        "explanation": null,
         "images": null
     },
     {
@@ -3940,7 +3872,7 @@
     {
         "question": "Explain:",
         "answers": null,
-        "explanation": "Explanation:HTTPS adds extra overhead to the HTTP-formed packet. HTTPS encrypts using Secure Sockets Layer (SSL). Even though some devices can perform SSL decryption and inspection, this can present processing and privacy issues.",
+        "explanation": null,
         "images": null
     },
     {
@@ -3992,7 +3924,7 @@
     {
         "question": "173. Match the network-based antimalware solution to the function. (Not all options are used.)",
         "answers": null,
-        "explanation": "One tactic of weaponization used by a threat actor after the vulnerability is identified is to obtain an automated tool to deliver the malware payload through the vulnerability.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/CyberOps-Associate-Version-1.0-CyberOps-Associate-1.0-Final-exam-Answers-003-994x1024-1.png"
         ]
@@ -4063,13 +3995,13 @@
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:NIST describes the digital forensics process as involving the following four steps:Collection – the identification of potential sources of forensic data and acquisition, handling, and storage of that dataExamination – assessing and extracting relevant information from the collected data. This may involve decompression or decryption of the dataAnalysis – drawing conclusions from the data. Salient features, such as people, places, times, events, and so on should be documentedReporting – preparing and presenting information that resulted from the analysis. Reporting should be impartial and alternative explanations should be offered if appropriate",
+        "explanation": null,
         "images": null
     },
     {
         "question": "177. Match the alert classification with the description.",
         "answers": null,
-        "explanation": "Explanation:NIST describes the digital forensics process as involving the following four steps:Collection – the identification of potential sources of forensic data and acquisition, handling, and storage of that dataExamination – assessing and extracting relevant information from the collected data. This may involve decompression or decryption of the dataAnalysis – drawing conclusions from the data. Salient features, such as people, places, times, events, and so on should be documentedReporting – preparing and presenting information that resulted from the analysis. Reporting should be impartial and alternative explanations should be offered if appropriate",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/09/2021-04-16_143615.jpg"
         ]
@@ -4296,7 +4228,7 @@
     {
         "question": "188. Match the attack vector with the description.",
         "answers": null,
-        "explanation": "Explanation:The network layer is primarily concerned with passing data from a source to a destination on another network. IP addresses supply unique identifiers for the source and destination. The network layer provides connectionless, best-effort delivery. Devices rely on higher layers to supply services to processes.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/10/2021-12-28_152547.png"
         ]
@@ -4304,7 +4236,7 @@
     {
         "question": "189. Match the security management function with the description.",
         "answers": null,
-        "explanation": "Explanation:The network layer is primarily concerned with passing data from a source to a destination on another network. IP addresses supply unique identifiers for the source and destination. The network layer provides connectionless, best-effort delivery. Devices rely on higher layers to supply services to processes.",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2022/01/question30-1639433305.8688.png"
         ]

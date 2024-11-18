@@ -36,7 +36,7 @@ for question in soup.find_all("p"):
         explanation = None
         images = []
 
-        # Loop through everything following this question to gather answers and images
+        # Loop through all following elements to gather answers, images, and explanation
         for sibling in question.find_all_next():
             # Stop if we reach a new question or an unrelated section
             if sibling.name == "p" and sibling.find("strong") and "Explanation" not in sibling.text:
@@ -47,7 +47,7 @@ for question in soup.find_all("p"):
                 stop_parsing = True
                 break
 
-            # Collect answers if we encounter an <ul> list
+            # Collect answers if in <ul> list
             if sibling.name == "ul":
                 for li in sibling.find_all("li"):
                     answer_text = li.get_text(strip=True)
@@ -63,16 +63,32 @@ for question in soup.find_all("p"):
                         "is_correct": is_correct
                     })
 
-            # Collect images if they are in <img> tags
-            if sibling.name == "p" and sibling.find("img"):
-                img_tag = sibling.find("img")
-                if img_tag:
-                    images.append(img_tag["src"])
-                    print(f"Image found for question '{question_text}': {img_tag['src']}")  # Debug print
+            # Collect answers if in <p> tags with <br> elements
+            if sibling.name == "p" and sibling.find("br"):
+                answer_lines = sibling.get_text(strip=True).split("\n")
+                for line in answer_lines:
+                    answer_text = line.strip()
+                    if answer_text:
+                        # Check if this answer is correct by examining inline styles
+                        span_tag = sibling.find("span", style=True)
+                        is_correct = False
+                        if span_tag:
+                            style = span_tag['style'].lower()
+                            if "color: rgb(255, 0, 0)" in style or "color: #ff0000" in style:
+                                is_correct = True
+                        answers.append({
+                            "answer": answer_text,
+                            "is_correct": is_correct
+                        })
 
-            # Collect explanation if available
-            if sibling.name == "div" and "message_box success" in sibling.get("class", []):
+            # Collect images
+            if sibling.name == "img":
+                images.append(sibling["src"])
+
+            # Extract explanation when encountering a div with class "message_box success"
+            if sibling.name == "div" and "message_box" in sibling.get("class", []) and "success" in sibling.get("class", []):
                 explanation = sibling.get_text(strip=True)
+                break  # Explanations are unique per question, so we can stop looking for more explanations.
 
         # Append the parsed question data, ensuring all fields are present
         questions_data.append({
