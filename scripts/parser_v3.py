@@ -1,11 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
+import sys
 
 identifier = "v3"
 
 # Load HTML content from the URL
-url = "https://itexamanswers.net/cyberops-associate-version-1-0-final-exam-answers.html"
+url = sys.argv[1] if len(sys.argv) > 1 else None
+if not url:
+    raise ValueError("URL argument is required")
 response = requests.get(url)
 response.raise_for_status()  # Check for HTTP errors
 
@@ -15,14 +19,6 @@ soup = BeautifulSoup(response.text, "lxml")
 # Initialize list to store questions
 questions_data = []
 stop_parsing = False
-
-# Open a debug log file
-debug_file = open("debug_log.txt", "w", encoding="utf-8")
-
-# Debugging helper function
-def debug_element(tag, prefix=""):
-    """Writes tag name and its content to the debug log."""
-    debug_file.write(f"{prefix}DEBUG: Tag: {tag.name}, Content: {tag.get_text(strip=True)[:50]}\n")
 
 # Loop through <p> tags to identify questions
 for question in soup.find_all("p"):
@@ -36,16 +32,10 @@ for question in soup.find_all("p"):
     if stop_parsing:
         continue
 
-    # Debugging: Check current <p> tag content
-    debug_element(question)
-
     # Check if the paragraph contains a question based on typical content structure
     if question.find("strong") and "Explanation" not in question.text:
         # Extract question text
         question_text = question.get_text(strip=True)
-        
-        # Debugging: Write detected question to log
-        debug_file.write(f"DEBUG: Detected question: {question_text}\n")
 
         # Default values
         answers = []
@@ -62,9 +52,6 @@ for question in soup.find_all("p"):
                sibling.find_previous("div", {"class": "wpdiscuz_top_clearing"}):
                 stop_parsing = True
                 break
-
-            # Debugging: Write sibling content being processed
-            debug_element(sibling, "    ")
 
             # Collect answers if in <ul> list
             if sibling.name == "ul":
@@ -108,7 +95,6 @@ for question in soup.find_all("p"):
             if sibling.name == "div" and "message_box" in sibling.get("class", []) and "success" in sibling.get("class", []):
                 explanation = sibling.get_text(strip=True)
                 # Write explanation to debug
-                debug_file.write(f"DEBUG: Detected explanation: {explanation}\n")
                 break  # Explanations are unique per question, so we can stop looking for more explanations.
 
         # Append the parsed question data, ensuring all fields are present
@@ -119,11 +105,12 @@ for question in soup.find_all("p"):
             "images": images if images else None  # Store images as a list
         })
 
-# Close debug file
-debug_file.close()
+# Ensure the output directory exists
+output_dir = "output"
+os.makedirs(output_dir, exist_ok=True)
 
 # Save to JSON file
-with open(f"../output/questions_data_{identifier}.json", "w", encoding="utf-8") as json_file:
+with open(f"{output_dir}/questions_data_{identifier}.json", "w", encoding="utf-8") as json_file:
     json.dump(questions_data, json_file, indent=4, ensure_ascii=False)
 
-print("Data saved to questions_data.json and debug_log.txt")
+print(f"Data saved to {output_dir}/questions_data_{identifier}.json!")

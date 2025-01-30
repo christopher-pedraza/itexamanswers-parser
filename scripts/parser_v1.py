@@ -1,11 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
+import sys
 
 identifier = "v1"
 
 # Load HTML content from the URL
-url = "https://itexamanswers.net/ccna-1-v7-0-final-exam-answers-full-introduction-to-networks.html"
+url = sys.argv[1] if len(sys.argv) > 1 else None
+if not url:
+    raise ValueError("URL argument is required")
 response = requests.get(url)
 response.raise_for_status()  # Check for HTTP errors
 
@@ -83,8 +87,12 @@ for question in soup.find_all("p"):
             "images": images if images else None  # Store images as a list
         })
 
+# Ensure the output directory exists
+output_dir = "output"
+os.makedirs(output_dir, exist_ok=True)
+
 # Save to JSON file
-with open(f"../output/questions_data_{identifier}.json", "w", encoding="utf-8") as json_file:
+with open(f"{output_dir}/questions_data_{identifier}.json", "w", encoding="utf-8") as json_file:
     json.dump(questions_data, json_file, indent=4, ensure_ascii=False)
 
-print("Data saved to questions_data.json")
+print(f"Data saved to {output_dir}/questions_data_{identifier}.json!")
