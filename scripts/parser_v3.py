@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+identifier = "v3"
+
 # Load HTML content from the URL
 url = "https://itexamanswers.net/cyberops-associate-version-1-0-final-exam-answers.html"
 response = requests.get(url)
@@ -121,7 +123,7 @@ for question in soup.find_all("p"):
 debug_file.close()
 
 # Save to JSON file
-with open("questions_data.json", "w", encoding="utf-8") as json_file:
+with open(f"../output/questions_data_{identifier}.json", "w", encoding="utf-8") as json_file:
     json.dump(questions_data, json_file, indent=4, ensure_ascii=False)
 
 print("Data saved to questions_data.json and debug_log.txt")

@@ -1,8 +1,8 @@
-# "question":\s*"([^0-9][^"]*)"
-
 import requests
 from bs4 import BeautifulSoup
 import json
+
+identifier = "v2"
 
 # Load HTML content from the URL
 url = "https://itexamanswers.net/cyberops-associate-version-1-0-final-exam-answers.html"
@@ -27,12 +27,12 @@ for question in soup.find_all("p"):
     # Skip parsing if we've reached the stop point
     if stop_parsing:
         continue
-
-    # Check if the paragraph contains a question based on typical content structure
-    if question.find("strong") and "Explanation" not in question.text:
+    
+    strong_tag = question.find("strong")
+    if strong_tag and "Explanation" not in strong_tag.text:
         # Extract question text
-        question_text = question.get_text(strip=True)
-
+        question_text = strong_tag.get_text(strip=True)
+        
         # Default values
         answers = []
         explanation = None
@@ -56,7 +56,7 @@ for question in soup.find_all("p"):
                     # Check if this answer is correct by examining the <span> tag color
                     span_tag = li.find("span", style=True)
                     is_correct = False
-                    if span_tag and "style" in span_tag.attrs:
+                    if span_tag:
                         style = span_tag['style'].lower()
                         if "color: rgb(255, 0, 0)" in style or "color: #ff0000" in style:
                             is_correct = True
@@ -74,7 +74,7 @@ for question in soup.find_all("p"):
                         # Check if this answer is correct by examining inline styles
                         span_tag = sibling.find("span", style=True)
                         is_correct = False
-                        if span_tag and "style" in span_tag.attrs:
+                        if span_tag:
                             style = span_tag['style'].lower()
                             if "color: rgb(255, 0, 0)" in style or "color: #ff0000" in style:
                                 is_correct = True
@@ -100,8 +100,8 @@ for question in soup.find_all("p"):
             "images": images if images else None  # Store images as a list
         })
 
-# Save to JSON files
-with open("questions_data.json", "w", encoding="utf-8") as json_file:
+# Save to JSON file
+with open(f"../output/questions_data_{identifier}.json", "w", encoding="utf-8") as json_file:
     json.dump(questions_data, json_file, indent=4, ensure_ascii=False)
 
-print("Data saved to questions_data.json and debug_log.txt")
+print("Data saved to questions_data.json")
