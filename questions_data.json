@@ -1,11 +1,5 @@
 [
     {
-        "question": "How to find:Press“Ctrl + F”in the browser and fill in whatever wording is in the question to find that question/answer. If the question is not here, find it inQuestions Bank.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "1. Refer to the exhibit. What will router R1 do with a packet that has a destination IPv6 address of 2001:db8:cafe:5::1?",
         "answers": [
             {
@@ -79,12 +73,6 @@
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2016/02/sfdsgfdg5-1.jpg"
         ]
-    },
-    {
-        "question": "Explain:The static route on R1 has been incorrectly configured with the wrong destination network and mask. The correct destination network and mask is 0.0.0.0 0.0.0.0.",
-        "answers": null,
-        "explanation": null,
-        "images": null
     },
     {
         "question": "4. Which option shows a correctly configured IPv4 default static route?",
@@ -206,12 +194,6 @@
         ]
     },
     {
-        "question": "Explain:Under the stateless DHCPv6 configuration, indicated by the command ipv6 nd other-config-flag, the DHCPv6 server does not maintain the state information, because client IPv6 addresses are not managed by the DHCP server. Because the clients will configure their IPv6 addresses by combining the prefix/prefix-length and a self-generated interface ID, the ipv6 dhcp pool configuration does not need to specify the valid IPv6 address range. And because clients will use the link-local address of the router interface as the default gateway address, the default gateway address is not necessary.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "9. Refer to the exhibit. A network administrator configured routers R1 and R2 as part of HSRP group 1. After the routers have been reloaded, a user on Host1 complained of lack of connectivity to the Internet The network administrator issued the show standby brief command on both routers to verify the HSRP operations. In addition, the administrator observed the ARP table on Host1. Which entry should be seen in the ARP table on Host1 in order to gain connectivity to the Internet?",
         "answers": [
             {
@@ -237,7 +219,7 @@
         ]
     },
     {
-        "question": "10. Match the forwarding characteristic to its type. (Not all options are used.)",
+        "question": "10. Match the forwarding characteristic to its type. (Not all options are used.)",
         "answers": null,
         "explanation": null,
         "images": [
@@ -482,13 +464,7 @@
         ]
     },
     {
-        "question": "23. Refer to the exhibit. In addition to static routes directing traffic to networks 10.10.0.0/16 and 10.20.0.0/16, Router HQ is also configured with the following command:",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
-        "question": "What is the purpose of this command?",
+        "question": "23. Refer to the exhibit. In addition to static routes directing traffic to networks 10.10.0.0/16 and 10.20.0.0/16, Router HQ is also configured with the following command: 'ip route 0.0.0.0 0.0.0.0 serial 0/1/1'. What is the purpose of this command?",
         "answers": [
             {
                 "answer": "Packets that are received from the Internet will be forwarded to one of the LANs connected to R1 or R2.",
@@ -705,7 +681,7 @@
         "question": "31. Compared with dynamic routes, what are two advantages of using static routes on a router? (Choose two.)",
         "answers": [
             {
-                "answer": "They improve netw​ork security.",
+                "answer": "They improve network security.",
                 "is_correct": true
             },
             {
@@ -857,7 +833,7 @@
                 "is_correct": false
             },
             {
-                "answer": "interface range GigabitEthernet 0/4 – 5",
+                "answer": "interface range GigabitEthernet 0/4 - 5",
                 "is_correct": true
             },
             {
@@ -1002,14 +978,14 @@
         ]
     },
     {
-        "question": "44. Refer to the exhibit. R1 has been configured as shown. However, PC1 is not able to receive an IPv4 address. What is the problem?​",
+        "question": "44. Refer to the exhibit. R1 has been configured as shown. However, PC1 is not able to receive an IPv4 address. What is the problem?",
         "answers": [
             {
                 "answer": "The ip helper-address command was applied on the wrong interface.",
                 "is_correct": true
             },
             {
-                "answer": "R1 is not configured as a DHCPv4 server.​",
+                "answer": "R1 is not configured as a DHCPv4 server.",
                 "is_correct": false
             },
             {
@@ -1054,6 +1030,29 @@
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/01/i232273v1n1_232273.png"
         ]
+    },
+    {
+        "question": "46. What is the common term given to SNMP log messages that are generated by network devices and sent to the SNMP server?",
+        "answers": [
+            {
+                "answer": "traps",
+                "is_correct": true
+            },
+            {
+                "answer": "acknowledgments",
+                "is_correct": false
+            },
+            {
+                "answer": "auditing",
+                "is_correct": false
+            },
+            {
+                "answer": "warnings",
+                "is_correct": false
+            }
+        ],
+        "explanation": null,
+        "images": null
     },
     {
         "question": "47. A network administrator is adding a new WLAN on a Cisco 3500 series WLC. Which tab should the administrator use to create a new VLAN interface to be used for the new WLAN?",
@@ -1175,9 +1174,26 @@
         "images": null
     },
     {
-        "question": "Explain:DAI relies on DHCP snooping. DHCP snooping listens to DHCP message exchanges and builds a bindings database of valid tuples (MAC address, IP address, VLAN interface).",
-        "answers": null,
-        "explanation": null,
+        "question": "52. Why is DHCP snooping required when using the Dynamic ARP Inspection feature?",
+        "answers": [
+            {
+                "answer": "It relies on the settings of trusted and untrusted ports set by DHCP snooping.",
+                "is_correct": true
+            },
+            {
+                "answer": "It uses the MAC address table to verify the default gateway IP address.",
+                "is_correct": false
+            },
+            {
+                "answer": "It redirects ARP requests to the DHCP server for verification.",
+                "is_correct": false
+            },
+            {
+                "answer": "It uses the MAC-address-to-IP-address binding database to validate an ARP packet.",
+                "is_correct": true
+            }
+        ],
+        "explanation": "DAI relies on DHCP snooping. DHCP snooping listens to DHCP message exchanges and builds a bindings database of valid tuples (MAC address, IP address, VLAN interface). When DAI is enabled, the switch drops ARP packet if the sender MAC address and sender IP address do not match an entry in the DHCP snooping bindings database. However, it can be overcome through static mappings. Static mappings are useful when hosts configure static IP addresses, DHCP snooping cannot be run, or other switches in the network do not run dynamic ARP inspection. A static mapping associates an IP address to a MAC address on a VLAN.",
         "images": null
     },
     {
@@ -1204,12 +1220,6 @@
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2016/02/i210868v1n2_210868.gif"
         ]
-    },
-    {
-        "question": "Explain:The problem with the current floating static route is that the administrative distance is set too low. The administrative distance will need to be higher than that of OSPF, which is 110, so that the router will only use the OSPF link when it is up.",
-        "answers": null,
-        "explanation": null,
-        "images": null
     },
     {
         "question": "54. Refer to the exhibit. What is the metric to forward a data packet with the IPv6 destination address 2001:DB8:ACAD:E:240:BFF:FED4:9DD2?",
@@ -1245,12 +1255,6 @@
         ]
     },
     {
-        "question": "Explain:The IPv6 destination address 2001:DB8:ACAD:E:240:BFF:FED4:9DD2 belongs to the network of 2001:DB8:ACAD:E::/64. In the routing table, the route to forward the packet has Serial 0/0/1 as an exit interface and 2682112 as the cost.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "55. A network administrator is configuring a new Cisco switch for remote management access. Which three items must be configured on the switch for the task? (Choose three.)",
         "answers": [
             {
@@ -1282,24 +1286,18 @@
         "images": null
     },
     {
-        "question": "Explain:To enable the remote management access, the Cisco switch must be configured with an IP address and a default gateway. In addition, vty lines must configured to enable either Telnet or SSH connections. A loopback address, default VLAN, and VTP domain configurations are not necessary for the purpose of remote switch management.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "56. Refer to the exhibit. Which statement shown in the output allows router R1 to respond to stateless DHCPv6 requests?",
         "answers": [
             {
-                "answer": "ipv6 nd other-config-flag​",
+                "answer": "ipv6 nd other-config-flag",
                 "is_correct": true
             },
             {
-                "answer": "prefix-delegation 2001:DB8:8::/48 00030001000E84244E70​",
+                "answer": "prefix-delegation 2001:DB8:8::/48 00030001000E84244E70",
                 "is_correct": false
             },
             {
-                "answer": "ipv6 dhcp server LAN1​",
+                "answer": "ipv6 dhcp server LAN1",
                 "is_correct": false
             },
             {
@@ -1307,7 +1305,7 @@
                 "is_correct": false
             },
             {
-                "answer": "dns-server 2001:DB8:8::8​",
+                "answer": "dns-server 2001:DB8:8::8",
                 "is_correct": false
             }
         ],
@@ -1317,16 +1315,26 @@
         ]
     },
     {
-        "question": "Explain:The interface command ipv6 nd other-config-flag allows RA messages to be sent on this interface, indicating that additional information is available from a stateless DHCPv6 server.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "57. Refer to the exhibit. A Layer 3 switch routes for three VLANs and connects to a router for Internet connectivity. Which two configurations would be applied to the switch? (Choose two.)",
         "answers": [
             {
-                "answer": "(config)# interface gigabitethernet1/1(config-if)# switchport mode trunk",
+                "answer": "(config)# interface gigabitethernet1/1 |and| (config-if)# switchport mode trunk",
+                "is_correct": false
+            },
+            {
+                "answer": "(config)# interface gigabitethernet 1/1 |and| (config-if)# no switchport |and| (config-if)# ip address 192.168.1.2 255.255.255.252",
+                "is_correct": true
+            },
+            {
+                "answer": "(config)# interface vlan 1 |and| (config-if)# ip address 192.168.1.2 255.255.255.0 |and| (config-if)# no shutdown",
+                "is_correct": false
+            },
+            {
+                "answer": "(config)# ip routing",
+                "is_correct": true
+            },
+            {
+                "answer": "(config)# interface fastethernet0/4 |and| (config-if)# switchport mode trunk",
                 "is_correct": false
             }
         ],
@@ -1334,28 +1342,6 @@
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2020/01/CCNA-2-v7-exam-answers-57.png"
         ]
-    },
-    {
-        "question": "(config)# interface gigabitethernet 1/1(config-if)# no switchport(config-if)# ip address 192.168.1.2 255.255.255.252",
-        "answers": [
-            {
-                "answer": "(config)# interface vlan 1(config-if)# ip address 192.168.1.2 255.255.255.0(config-if)# no shutdown",
-                "is_correct": false
-            }
-        ],
-        "explanation": null,
-        "images": null
-    },
-    {
-        "question": "(config)# ip routing",
-        "answers": [
-            {
-                "answer": "(config)# interface fastethernet0/4(config-if)# switchport mode trunk",
-                "is_correct": false
-            }
-        ],
-        "explanation": null,
-        "images": null
     },
     {
         "question": "58. A technician is troubleshooting a slow WLAN and decides to use the split-the-traffic approach. Which two parameters would have to be configured to do this? (Choose two.)",
@@ -1439,12 +1425,6 @@
         "images": null
     },
     {
-        "question": "Explain:To maintain the MAC address table, the switch uses the source MAC address of the incoming packets and the port that the packets enter. The destination address is used to select the outgoing port.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "61. Refer to the exhibit. A network administrator is reviewing the configuration of switch S1. Which protocol has been implemented to group multiple physical ports into one logical link?",
         "answers": [
             {
@@ -1490,12 +1470,6 @@
             }
         ],
         "explanation": "Explain:There are four basic types of static routes. Floating static routes are backup routes that are placed into the routing table if a primary route is lost. A summary static route aggregates several routes into one, reducing the of the routing table. Standard static routes are manually entered routes into the routing table. Default static routes create a gateway of last resort.",
-        "images": null
-    },
-    {
-        "question": "Explain:There are four basic types of static routes. Floating static routes are backup routes that are placed into the routing table if a primary route is lost. A summary static route aggregates several routes into one, reducing the of the routing table. Standard static routes are manually entered routes into the routing table. Default static routes create a gateway of last resort.",
-        "answers": null,
-        "explanation": null,
         "images": null
     },
     {
@@ -1545,12 +1519,6 @@
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2016/02/i246203v1n1_2107451.jpg"
         ]
-    },
-    {
-        "question": "Explain:The correct syntax is:router(config)# ip route destination-network destination-mask {next-hop-ip-address | exit-interface}If the local exit interface instead of the next-hop IP address is used then the route will be displayed as a directly connected route instead of a static route in the routing table. Because the network to be reached is 172.16.2.0 and the next-hop IP address is 172.16.3.1, the command is R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1",
-        "answers": null,
-        "explanation": null,
-        "images": null
     },
     {
         "question": "65. What protocol or technology allows data to transmit over redundant switch links?",
@@ -1607,12 +1575,6 @@
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2017/06/46.jpg"
         ]
-    },
-    {
-        "question": "Explain:ARP requests are sent out as broadcasts. That means the ARP request is sent only throughout a specific VLAN. VLAN 1 hosts will only hear ARP requests from hosts on VLAN 1. VLAN 2 hosts will only hear ARP requests from hosts on VLAN 2.",
-        "answers": null,
-        "explanation": null,
-        "images": null
     },
     {
         "question": "67. Refer to the exhibit. The network administrator configures both switches as displayed. However, host C is unable to ping host D and host E is unable to ping host F. What action should the administrator take to enable this communication?",
@@ -1713,12 +1675,6 @@
         "images": null
     },
     {
-        "question": "Explain:A. AAA authorization is implemented immediately after the user is authenticated against a specific AAA data source.",
-        "answers": null,
-        "explanation": null,
-        "images": null
-    },
-    {
         "question": "71. A company security policy requires that all MAC addressing be dynamically learned and added to both the MAC address table and the running configuration on each switch. Which port security configuration will accomplish this?",
         "answers": [
             {
@@ -1739,12 +1695,6 @@
             }
         ],
         "explanation": "Explain:With sticky secure MAC addressing, the MAC addresses can be either dynamically learned or manually configured and then stored in the address table and added to the running configuration file. In contrast, dynamic secure MAC addressing provides for dynamically learned MAC addressing that is stored only in the address table.",
-        "images": null
-    },
-    {
-        "question": "Explain:With sticky secure MAC addressing, the MAC addresses can be either dynamically learned or manually configured and then stored in the address table and added to the running configuration file. In contrast, dynamic secure MAC addressing provides for dynamically learned MAC addressing that is stored only in the address table.",
-        "answers": null,
-        "explanation": null,
         "images": null
     },
     {
@@ -1995,7 +1945,32 @@
     },
     {
         "question": "82. Which three pairs of trunking modes will establish a functional trunk link between two Cisco switches? (Choose three.)",
-        "answers": null,
+        "answers": [
+            {
+                "answer": "dynamic auto - dynamic auto",
+                "is_correct": false
+            },
+            {
+                "answer": "access - trunk",
+                "is_correct": false
+            },
+            {
+                "answer": "dynamic desirable - trunk",
+                "is_correct": true
+            },
+            {
+                "answer": "access - dynamic auto",
+                "is_correct": false
+            },
+            {
+                "answer": "dynamic desirable - dynamic desirable",
+                "is_correct": true
+            },
+            {
+                "answer": "dynamic desirable - dynamic auto",
+                "is_correct": true
+            }
+        ],
         "explanation": null,
         "images": null
     },
@@ -2331,7 +2306,7 @@
     {
         "question": "97. Match each DHCP message type with its description. (Not all options are used.)",
         "answers": null,
-        "explanation": "Explanation:Place the options in the following order:a client initiating a message to find a DHCP server – DHCPDISCOVERa DHCP server responding to the initial request by a client – DHCPOFFERthe client accepting the IP address provided by the DHCP server – DHCPREQUESTthe DHCP server confirming that the lease has been accepted – DHCPACK",
+        "explanation": null,
         "images": [
             "https://itexamanswers.net/wp-content/uploads/2019/12/2020-01-20_225135.jpg"
         ]
@@ -2772,20 +2747,208 @@
             {
                 "answer": "The load-balancing method used is source port to destination port.",
                 "is_correct": false
-            },
-            {
-                "answer": "116. Match the step number to the sequence of stages that occur during the HSRP failover process. (Not all options are used.)",
-                "is_correct": false
             }
         ],
+        "explanation": null,
+        "images": [
+            "https://itexamanswers.net/wp-content/uploads/2017/03/i221267v1n1_item2.jpg"
+        ]
+    },
+    {
+        "question": "116. Match the step number to the sequence of stages that occur during the HSRP failover process. (Not all options are used.)",
+        "answers": null,
         "explanation": "Explanation:Hot Standby Router Protocol (HSRP) is a Cisco-proprietary protocol that is designed to allow for transparent failover of a first-hop IPv4 device.",
         "images": [
-            "https://itexamanswers.net/wp-content/uploads/2017/03/i221267v1n1_item2.jpg",
             "https://itexamanswers.net/wp-content/uploads/2020/01/2020-04-28_074010.jpg"
         ]
     },
     {
-        "question": "Case 2:",
+        "question": "117. On a Cisco 3504 WLC Summary page ( Advanced > Summary ), which tab allows a network administrator to configure a particular WLAN with a WPA2 policy?",
+        "answers": [
+            {
+                "answer": "WLANs",
+                "is_correct": true
+            },
+            {
+                "answer": "SECURITY",
+                "is_correct": false
+            },
+            {
+                "answer": "WIRELESS",
+                "is_correct": false
+            },
+            {
+                "answer": "MANAGEMENT",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Explanation: The WLANs tab in the Cisco 3504 WLC advanced Summary page allows a user to access the configuration of WLANs including security, QoS, and policy-mapping.",
+        "images": null
+    },
+    {
+        "question": "118. Refer to the exhibit. A network engineer is configuring IPv6 routing on the network. Which command issued on router HQ will configure a default route to the Internet to forward packets to an IPv6 destination network that is not listed in the routing table?​",
+        "answers": [
+            {
+                "answer": "ipv6 route ::/0 serial 0/0/0",
+                "is_correct": false
+            },
+            {
+                "answer": "ip route 0.0.0.0 0.0.0.0 serial 0/1/1",
+                "is_correct": false
+            },
+            {
+                "answer": "ipv6 route ::1/0 serial 0/1/1",
+                "is_correct": false
+            },
+            {
+                "answer": "ipv6 route ::/0 serial 0/1/1",
+                "is_correct": true
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "119. Users are complaining of sporadic access to the internet every afternoon. What should be done or checked?",
+        "answers": [
+            {
+                "answer": "Create static routes to all internal networks and a default route to the internet.",
+                "is_correct": false
+            },
+            {
+                "answer": "Verify that there is not a default route in any of the edge router routing tables.",
+                "is_correct": false
+            },
+            {
+                "answer": "Create a floating static route to that network.",
+                "is_correct": false
+            },
+            {
+                "answer": "Check the statistics on the default route for oversaturation.",
+                "is_correct": true
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "120. What action takes place when the source MAC address of a frame entering a switch appears in the MAC address table associated with a different port?",
+        "answers": [
+            {
+                "answer": "The switch purges the entire MAC address table.",
+                "is_correct": false
+            },
+            {
+                "answer": "The switch replaces the old entry and uses the more current port.",
+                "is_correct": true
+            },
+            {
+                "answer": "The switch updates the refresh timer for the entry.",
+                "is_correct": false
+            },
+            {
+                "answer": "The switch forwards the frame out of the specified port.",
+                "is_correct": false
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+        {
+        "question": "121. A network administrator is configuring a WLAN. Why would the administrator use a WLAN controller?",
+        "answers": [
+            {
+                "answer": "to centralize management of multiple WLANs",
+                "is_correct": false
+            },
+            {
+                "answer": "to provide privacy and integrity to wireless traffic by using encryption",
+                "is_correct": false
+            },
+            {
+                "answer": "to facilitate group configuration and management of multiple WLANs through a WLC",
+                "is_correct": true
+            },
+            {
+                "answer": "to provide prioritized service for time-sensitive applications",
+                "is_correct": false
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
+        "answers": [
+            {
+                "answer": "creating SVI interfaces",
+                "is_correct": true
+            },
+            {
+                "answer": "adjusting the route metric",
+                "is_correct": false
+            },
+            {
+                "answer": "enabling IP routing",
+                "is_correct": true
+            },
+            {
+                "answer": "assigning ports to VLANs",
+                "is_correct": true
+            },
+            {
+                "answer": "deleting the default VLAN",
+                "is_correct": false
+            },
+            {
+                "answer": "assigning the ports to the native VLAN",
+                "is_correct": false
+            },
+            {
+                "answer": "modifying the default VLAN",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
+        "images": null
+    },
+    {
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
+        "answers": [
+            {
+                "answer": "installing a static route",
+                "is_correct": false
+            },
+            {
+                "answer": "assigning the ports to the native VLAN",
+                "is_correct": false
+            },
+            {
+                "answer": "entering “no switchport” on the port connected to the router",
+                "is_correct": true
+            },
+            {
+                "answer": "modifying the default VLAN",
+                "is_correct": false
+            },
+            {
+                "answer": "assigning ports to VLANs",
+                "is_correct": true
+            },
+            {
+                "answer": "enabling IP routing",
+                "is_correct": true
+            },
+            {
+                "answer": "adjusting the route metric",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
+        "images": null
+    },
+    {
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
         "answers": [
             {
                 "answer": "establishing adjacencies",
@@ -2797,7 +2960,7 @@
             },
             {
                 "answer": "assigning ports to VLANs",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "implementing a routing protocol",
@@ -2805,7 +2968,7 @@
             },
             {
                 "answer": "creating SVI interfaces",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "installing a static route",
@@ -2813,18 +2976,18 @@
             },
             {
                 "answer": "creating VLANs",
-                "is_correct": false
+                "is_correct": true
             }
         ],
-        "explanation": null,
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
         "images": null
     },
     {
-        "question": "Case 3:",
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
         "answers": [
             {
                 "answer": "assigning ports to VLANs",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "assigning the ports to the native VLAN",
@@ -2840,7 +3003,7 @@
             },
             {
                 "answer": "enabling IP routing",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "installing a static route",
@@ -2848,14 +3011,14 @@
             },
             {
                 "answer": "entering “no switchport” on the port connected to the router",
-                "is_correct": false
+                "is_correct": true
             }
         ],
-        "explanation": null,
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
         "images": null
     },
     {
-        "question": "Case 4:",
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
         "answers": [
             {
                 "answer": "installing a static route",
@@ -2863,7 +3026,7 @@
             },
             {
                 "answer": "enabling IP routing",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "modifying the default VLAN",
@@ -2875,7 +3038,7 @@
             },
             {
                 "answer": "assigning ports to VLANs",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "assigning the ports to the native VLAN",
@@ -2883,18 +3046,18 @@
             },
             {
                 "answer": "creating SVI interfaces",
-                "is_correct": false
+                "is_correct": true
             }
         ],
-        "explanation": null,
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
         "images": null
     },
     {
-        "question": "Case 5:",
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
         "answers": [
             {
                 "answer": "assigning ports to VLANs",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "assigning the ports to the native VLAN",
@@ -2902,7 +3065,7 @@
             },
             {
                 "answer": "enabling IP routing",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "modifying the default VLAN",
@@ -2918,14 +3081,14 @@
             },
             {
                 "answer": "creating SVI interfaces",
-                "is_correct": false
+                "is_correct": true
             }
         ],
-        "explanation": null,
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
         "images": null
     },
     {
-        "question": "Case 6:",
+        "question": "122. A new Layer 3 switch is connected to a router and is being configured for interVLAN routing. What are three of the five steps required for the configuration? (Choose three.)",
         "answers": [
             {
                 "answer": "establishing adjacencies",
@@ -2933,7 +3096,7 @@
             },
             {
                 "answer": "enabling IP routing",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "assigning the ports to the native VLAN",
@@ -2949,18 +3112,18 @@
             },
             {
                 "answer": "entering “no switchport” on the port connected to the router",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "assigning ports to VLANs",
-                "is_correct": false
+                "is_correct": true
             }
         ],
-        "explanation": "Explanation:Steps to configure Layer 3 switch to route with a router:Step 1. Configure the routed port.Step 2. Enable routing.Step 3. Configure routing.Step 4. Verify routing.Step 5. Verify connectivity.Reference:4.3.8 Packet Tracer Configure Layer 3 Switching and inter VLAN Routing",
+        "explanation": "Explanation: Steps to configure Layer 3 switch to route with a router: Step 1. Configure the routed port. Step 2. Enable routing. Step 3. Configure routing. Step 4. Verify routing. Step 5. Verify connectivity.",
         "images": null
     },
     {
-        "question": "Reference:4.3.8 Packet Tracer Configure Layer 3 Switching and inter VLAN Routing",
+        "question": "123. Which three statements accurately describe duplex and speed settings on Cisco 2960 switches? (Choose three.)",
         "answers": [
             {
                 "answer": "An autonegotiation failure can result in connectivity issues.",
@@ -2985,27 +3148,39 @@
             {
                 "answer": "By default, the autonegotiation feature is disabled.",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "124. Refer to the exhibit. A network administrator configures R1 for inter-VLAN routing between VLAN 10 and VLAN 20. However, the devices in VLAN 10 and VLAN 20 cannot communicate. Based on the configuration in the exhibit, what is a possible cause for the problem?",
+        "answers": [
             {
-                "answer": "124. Refer to the exhibit. A network administrator configures R1 for inter-VLAN routing between VLAN 10 and VLAN 20. However, the devices in VLAN 10 and VLAN 20 cannot communicate. Based on the configuration in the exhibit, what is a possible cause for the problem?",
+                "answer": "The port Gi0/0 should be configured as trunk port.",
                 "is_correct": false
             },
             {
-                "answer": "A. The port Gi0/0 should be configured as trunk port.",
-                "is_correct": false
-            },
-            {
-                "answer": "B. The encapsulation is misconfigured on a subinterface.",
+                "answer": "The encapsulation is misconfigured on a subinterface.",
                 "is_correct": true
             },
             {
-                "answer": "C. A no shutdown command should be added in each subinterface configuration.",
+                "answer": "A no shutdown command should be added in each subinterface configuration.",
                 "is_correct": false
             },
             {
-                "answer": "D. The command interface gigabitEthernet 0/0.1 is wrong.",
+                "answer": "The command interface gigabitEthernet 0/0.1 is wrong.",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": [
+            "https://itexamanswers.net/wp-content/uploads/2020/01/2021-12-19_221231.jpg"
+        ]
+    },
+    {
+        "question": "125. A network administrator uses the spanning-tree portfast bpduguard default global configuration command to enable BPDU guard on a switch. However, BPDU guard is not activated on all access ports. What is the cause of the issue?",
+        "answers": [
             {
                 "answer": "BPDU guard needs to be activated in the interface configuration command mode.",
                 "is_correct": false
@@ -3021,7 +3196,14 @@
             {
                 "answer": "PortFast is not configured on all access ports.",
                 "is_correct": true
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "126. Which two types of spanning tree protocols can cause suboptimal traffic flows because they assume only one spanning-tree instance for the entire bridged network? (Choose two.)",
+        "answers": [
             {
                 "answer": "MSTP",
                 "is_correct": false
@@ -3044,9 +3226,7 @@
             }
         ],
         "explanation": null,
-        "images": [
-            "https://itexamanswers.net/wp-content/uploads/2020/01/2021-12-19_221231.jpg"
-        ]
+        "images": null
     },
     {
         "question": "127. Refer to the exhibit. A network administrator is configuring the router R1 for IPv6 address assignment. Based on the partial configuration, which IPv6 global unicast address assignment scheme does the administrator intend to implement?",
@@ -3124,7 +3304,7 @@
         "images": null
     },
     {
-        "question": "130. Refer to the exhibit. Consider that the main power has just been restored. PC3 issues a broadcast IPv4 DHCP request. To which port will SW1 forward this request?​",
+        "question": "130. Refer to the exhibit. Consider that the main power has just been restored. PC3 issues a broadcast IPv4 DHCP request. To which port will SW1 forward this request?",
         "answers": [
             {
                 "answer": "to Fa0/1, Fa0/2, and Fa0/3 only",
@@ -3135,11 +3315,11 @@
                 "is_correct": false
             },
             {
-                "answer": "to Fa0/1 only​",
+                "answer": "to Fa0/1 only",
                 "is_correct": false
             },
             {
-                "answer": "to Fa0/1, Fa0/2, and Fa0/4 only​",
+                "answer": "to Fa0/1, Fa0/2, and Fa0/4 only",
                 "is_correct": false
             },
             {
@@ -3165,7 +3345,7 @@
             },
             {
                 "answer": "The switch adds the MAC address and incoming port number to the table.",
-                "is_correct": false
+                "is_correct": true
             },
             {
                 "answer": "The switch adds a MAC address table entry mapping for the destination MAC address and the ingress port.",
@@ -3176,7 +3356,7 @@
         "images": null
     },
     {
-        "question": "Case 2:",
+        "question": "131. What action takes place when the source MAC address of a frame entering a switch is not in the MAC address table?",
         "answers": [
             {
                 "answer": "The switch adds a MAC address table entry for the destination MAC address and the egress port.",
@@ -3193,7 +3373,15 @@
             {
                 "answer": "The switch updates the refresh timer for the entry.",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+
+    {
+        "question": "132. Employees are unable to connect to servers on one of the internal networks. What should be done or checked?",
+        "answers": [
             {
                 "answer": "Use the “show ip interface brief” command to see if an interface is down.",
                 "is_correct": true
@@ -3232,8 +3420,15 @@
             {
                 "answer": "It manually enables a trunk link.",
                 "is_correct": false
-            },
-            {
+            }  
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "134. An administrator notices that large numbers of packets are being dropped on one of the branch routers. What should be done or checked?",
+        "answers": [
+             {
                 "answer": "Create static routes to all internal networks and a default route to the internet.",
                 "is_correct": false
             },
@@ -3248,7 +3443,14 @@
             {
                 "answer": "Check the routing table for a missing static route.",
                 "is_correct": true
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "135. What are two switch characteristics that could help alleviate network congestion? (Choose two.)",
+        "answers": [
             {
                 "answer": "fast internal switching",
                 "is_correct": true
@@ -3408,7 +3610,16 @@
             {
                 "answer": "to monitor the operation of the wireless network",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+
+
+    {
+        "question": "143. What is the effect of entering the switchport mode access configuration command on a switch?",
+        "answers": [
             {
                 "answer": "It enables BPDU guard on a specific port.",
                 "is_correct": false
@@ -3424,29 +3635,59 @@
             {
                 "answer": "It disables DTP on a non-trunking interface.",
                 "is_correct": true
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "144. A network administrator has configured a router for stateless DHCPv6 operation. However, users report that workstations are not receiving DNS server information. Which two router configuration lines should be verified to ensure that stateless DHCPv6 service is properly configured? (Choose two.)",
+        "answers": [
             {
-                "answer": "The domain-name line is included in theipv6 dhcp poolsection.",
+                "answer": "The domain-name line is included in the 'ipv6 dhcp pool' section.",
                 "is_correct": false
             },
             {
-                "answer": "The dns-server line is included in theipv6 dhcp poolsection.",
+                "answer": "The dns-server line is included in the 'ipv6 dhcp pool' section.",
                 "is_correct": true
             },
             {
-                "answer": "Theipv6 nd other-config-flagis entered for the interface that faces the LAN segment.",
+                "answer": "The 'ipv6 nd other-config-flag' is entered for the interface that faces the LAN segment.",
                 "is_correct": true
             },
             {
-                "answer": "The address prefix line is included in theipv6 dhcp poolsection.",
+                "answer": "The address prefix line is included in the 'ipv6 dhcp pool' section.",
                 "is_correct": false
             },
             {
-                "answer": "Theipv6 nd managed-config-flagis entered for the interface that faces the LAN segment.",
+                "answer": "The 'ipv6 nd managed-config-flag' is entered for the interface that faces the LAN segment.",
                 "is_correct": false
             }
         ],
-        "explanation": "Explanation:To use the stateless DHCPv6 method, the router must inform DHCPv6 clients to configure a SLAAC IPv6 address and contact the DHCPv6 server for additional configuration parameters, such as the DNS server address. This is done through the commandipv6 nd other-config-flagentered at the interface configuration mode. The DNS server address is indicated in theipv6 dhcp poolconfiguration.",
+        "explanation": "Explanation:To use the stateless DHCPv6 method, the router must inform DHCPv6 clients to configure a SLAAC IPv6 address and contact the DHCPv6 server for additional configuration parameters, such as the DNS server address. This is done through the command 'ipv6 nd other-config-flag' entered at the interface configuration mode. The DNS server address is indicated in the 'ipv6 dhcp pool' configuration.",
+        "images": null
+    },
+    {
+        "question": "145. A network administrator is configuring a WLAN. Why would the administrator disable the broadcast feature for the SSID?",
+        "answers": [
+            {
+                "answer": "to eliminate outsiders scanning for available SSIDs in the area",
+                "is_correct": true
+            },
+            {
+                "answer": "to centralize management of multiple WLANs",
+                "is_correct": false
+            },
+            {
+                "answer": "to facilitate group configuration and management of multiple WLANs through a WLC",
+                "is_correct": false
+            },
+            {
+                "answer": "to provide prioritized service for time-sensitive applications",
+                "is_correct": false
+            }
+        ],
+        "explanation": null,
         "images": null
     },
     {
@@ -3492,7 +3733,14 @@
             {
                 "answer": "The switch will forward the frame out all ports except the incoming port.",
                 "is_correct": true
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "148. A junior technician was adding a route to a LAN router. A traceroute to a device on the new network revealed a wrong path and unreachable status. What should be done or checked?",
+        "answers": [
             {
                 "answer": "Create a floating static route to that network.",
                 "is_correct": false
@@ -3508,7 +3756,14 @@
             {
                 "answer": "Verify that the static route to the server is present in the routing table.",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "149. What is the effect of entering the ip arp inspection vlan 10 configuration command on a switch?",
+        "answers": [
             {
                 "answer": "It specifies the maximum number of L2 addresses allowed on a port.",
                 "is_correct": false
@@ -3524,7 +3779,14 @@
             {
                 "answer": "It globally enables BPDU guard on all PortFast-enabled ports.",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "150. What protocol or technology manages trunk negotiations between switches?",
+        "answers": [
             {
                 "answer": "VTP",
                 "is_correct": false
@@ -3843,7 +4105,14 @@
             {
                 "answer": "VTP",
                 "is_correct": false
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "164. What is the effect of entering the show ip dhcp snooping binding configuration command on a switch?",
+        "answers": [
             {
                 "answer": "It switches a trunk port to access mode.",
                 "is_correct": false
@@ -3859,7 +4128,14 @@
             {
                 "answer": "It displays the IP-to-MAC address associations for switch interfaces.",
                 "is_correct": true
-            },
+            }
+        ],
+        "explanation": null,
+        "images": null
+    },
+    {
+        "question": "165. What action takes place when the source MAC address of a frame entering a switch is in the MAC address table?",
+        "answers": [
             {
                 "answer": "The switch forwards the frame out of the specified port.",
                 "is_correct": false
@@ -3904,7 +4180,7 @@
         "images": null
     },
     {
-        "question": "Explain:By dividing the one big network into two smaller network, the network administrator has created two smaller broadcast domains. When a broadcast is sent on the network now, the broadcast will only be sent to the devices on the same Ethernet LAN. The other LAN will not receive the broadcast.",
+        "question": "167. What defines a host route on a Cisco router?",
         "answers": [
             {
                 "answer": "The link-local address is added automatically to the routing table as an IPv6 host route.",
