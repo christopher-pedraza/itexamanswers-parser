@@ -62,7 +62,7 @@ for question in soup.find_all("p"):
                     is_correct = False
                     if span_tag:
                         style = span_tag['style'].lower()
-                        if "color: rgb(255, 0, 0)" in style or "color: #ff0000" in style:
+                        if "color: rgb(255, 0, 0)" in style or "color: #ff0000" in style or "color: red" in style:
                             is_correct = True
                     answers.append({
                         "answer": answer_text,

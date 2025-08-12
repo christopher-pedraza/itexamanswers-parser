@@ -17,7 +17,7 @@ def run_scripts_in_folder(folder_path, url):
 
 if __name__ == "__main__":
     scripts_folder = os.path.join(os.path.dirname(__file__), 'scripts')
-    url = sys.argv[1] if len(sys.argv) > 1 else None
+    url = sys.argv[1] if len(sys.argv) > 1 else "https://itexamanswers.net/ccna-2-v7-0-final-exam-answers-full-switching-routing-and-wireless-essentials.html"
     if not url:
         raise ValueError("URL argument is required")
     run_scripts_in_folder(scripts_folder, url)
